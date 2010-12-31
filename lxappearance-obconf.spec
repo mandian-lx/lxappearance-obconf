@@ -1,7 +1,7 @@
+Summary:        Plugin to configure OpenBox inside LXAppearance
 Name:           lxappearance-obconf
 Version:        0.5.0
 Release:        %mkrel 1
-Summary:        Plugin to configure OpenBox inside LXAppearance
 
 Group:          Graphical desktop/Other
 License:        GPLv2+
@@ -9,12 +9,10 @@ URL:            http://lxde.org/
 Source0:        %{name}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
-%if %mdkversion < 201100
-BuildRequires:  gtk2-devel
-%endif
-
-%if %mdkversion = 201100
+%if %mdkver > 201010
 BuildRequires:  gtk+2-devel
+%else
+BuildRequires:	gtk2-devel
 %endif
 
 BuildRequires:  openbox-devel
@@ -47,7 +45,6 @@ rm -rf %{buildroot}
 make install DESTDIR=$RPM_BUILD_ROOT
 rm $RPM_BUILD_ROOT%{_libdir}/lxappearance/plugins/obconf.la
 %find_lang %{name}
-
 
 %clean
 rm -rf %{buildroot}
