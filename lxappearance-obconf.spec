@@ -1,10 +1,9 @@
-%define distsuffix edm
 Name:           lxappearance-obconf
-Version:        0.0.1
-Release:        %mkrel 10
+Version:        0.5.0
+Release:        %mkrel 1
 Summary:        Plugin to configure OpenBox inside LXAppearance
 
-Group:          User Interface/Desktops
+Group:          Graphical desktop/Other
 License:        GPLv2+
 URL:            http://lxde.org/
 Source0:        %{name}-%{version}.tar.gz
@@ -37,14 +36,14 @@ sed -i 's/.po//g' LINGUAS
 make %{?_smp_mflags}
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 make install DESTDIR=$RPM_BUILD_ROOT
 rm $RPM_BUILD_ROOT%{_libdir}/lxappearance/plugins/obconf.la
 %find_lang %{name}
 
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 
 %files -f %{name}.lang
@@ -53,4 +52,3 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS CHANGELOG COPYING README
 %{_libdir}/lxappearance/plugins/obconf.so
 %{_datadir}/lxappearance/obconf/
-
