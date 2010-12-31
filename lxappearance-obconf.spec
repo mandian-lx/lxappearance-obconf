@@ -10,6 +10,11 @@ Source0:        %{name}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires:  gtk+2-devel
+
+%if %mdkversion < 201100
+BuildRequires:  gtk2-devel
+%endif
+
 BuildRequires:  openbox-devel
 BuildRequires:  lxappearance-devel
 BuildRequires:  %{_lib}sm6-devel
