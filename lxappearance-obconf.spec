@@ -17,7 +17,7 @@ BuildRequires:  gtk2-devel
 
 BuildRequires:  openbox-devel
 BuildRequires:  lxappearance-devel
-BuildRequires:  %{_lib}sm6-devel
+BuildRequires:  libsm-devel
 BuildRequires:  gettext
 BuildRequires:  intltool
 BuildRequires:  libtool
