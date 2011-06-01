@@ -1,7 +1,7 @@
 Summary:        Plugin to configure OpenBox inside LXAppearance
 Name:           lxappearance-obconf
 Version:        0.5.0
-Release:        %mkrel 4
+Release:        %mkrel 8
 
 Group:          Graphical desktop/Other
 License:        GPLv2+
@@ -12,12 +12,12 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 %if %mdkver > 201010
 BuildRequires:  gtk+2-devel
 %else
-BuildRequires:  gtk2-devel
+BuildRequires:	gtk2-devel
 %endif
 
 BuildRequires:  openbox-devel
 BuildRequires:  lxappearance-devel
-BuildRequires:  libsm-devel
+BuildRequires:  %{_lib}sm6-devel
 BuildRequires:  gettext
 BuildRequires:  intltool
 BuildRequires:  libtool
@@ -25,7 +25,7 @@ Requires:       lxappearance >= 0.5.0
 Requires:       openbox
 
 %description
-This plugin adds an addtional tab called "Window Border" to LXAppearance.
+This plugin adds an addtional tab called "Window Border" to LXAppearance. 
 It is only visible when the plugin is installed and Openbox is in use.
 
 %prep
