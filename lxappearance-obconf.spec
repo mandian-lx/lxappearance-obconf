@@ -15,7 +15,7 @@ BuildRequires:  gtk+2-devel
 BuildRequires:	gtk2-devel
 %endif
 
-BuildRequires:  openbox-devel
+BuildRequires:  openbox-devel automake
 BuildRequires:  lxappearance-devel
 BuildRequires:  %{_lib}sm6
 BuildRequires:  gettext
