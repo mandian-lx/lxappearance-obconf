@@ -7,7 +7,7 @@ Group:          Graphical desktop/Other
 License:        GPLv2+
 URL:            http://lxde.org/
 Source0:        %{name}-%{version}.tar.gz
-Patch0:		lxappearance-obconf-automake_112.patch
+Patch0:		lxappearance-obconf-automake_113.patch
 
 BuildRequires:  gtk+2-devel
 
