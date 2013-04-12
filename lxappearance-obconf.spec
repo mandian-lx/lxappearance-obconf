@@ -13,11 +13,12 @@ BuildRequires:  gtk+2-devel
 
 BuildRequires:  openbox-devel 
 BuildRequires:  lxappearance-devel
-BuildRequires:  %{_lib}sm6
+BuildRequires:  pkgconfig(sm)
 BuildRequires:  gettext
 BuildRequires:  intltool
 BuildRequires:  libtool
 BuildRequires:	openbox
+BuildRequires:	automake
 Requires:       lxappearance >= 0.5.1
 Requires:       openbox
 
