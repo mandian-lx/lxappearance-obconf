@@ -9,10 +9,10 @@ URL:            http://lxde.org/
 Source0:        %{name}-%{version}.tar.gz
 Patch0:		lxappearance-obconf-automake_113.patch
 
-BuildRequires:  gtk+2-devel
+BuildRequires:  pkgconfig(gtk+-x11-2.0)
 
-BuildRequires:  openbox-devel 
-BuildRequires:  lxappearance-devel
+BuildRequires:  pkgconfig(obt-3.5)
+BuildRequires:  pkgconfig(lxappearance)
 BuildRequires:  pkgconfig(sm)
 BuildRequires:  gettext
 BuildRequires:  intltool
