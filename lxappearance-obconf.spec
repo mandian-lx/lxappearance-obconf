@@ -1,11 +1,11 @@
 Summary:        Plugin to configure OpenBox inside LXAppearance
 Name:           lxappearance-obconf
-Version:        0.5.5
+Version:        0.5.1
 Release:        5
 Group:          Graphical desktop/Other
 License:        GPLv2+
 Url:            http://sourceforge.net/projects/lxde/files/LXAppearance/
-Source0:        %{name}-%{version}.tar.xz
+Source0:        %{name}-%{version}.tar.gz
 Patch0:		lxappearance-obconf-automake_113.patch
 BuildRequires:  gettext
 BuildRequires:  intltool
