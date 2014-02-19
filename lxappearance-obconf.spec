@@ -1,6 +1,6 @@
 Summary:        Plugin to configure OpenBox inside LXAppearance
 Name:           lxappearance-obconf
-Version:        0.5.1
+Version:        0.5.5
 Release:        5
 Group:          Graphical desktop/Other
 License:        GPLv2+
