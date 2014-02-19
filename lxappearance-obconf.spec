@@ -15,6 +15,7 @@ BuildRequires:  pkgconfig(gtk+-x11-2.0)
 BuildRequires:  pkgconfig(lxappearance)
 BuildRequires:  pkgconfig(obt-3.5)
 BuildRequires:  pkgconfig(sm)
+BuildRequires:	pkgconfig(python)
 Requires:       lxappearance >= 0.5.1
 Requires:       openbox
 
