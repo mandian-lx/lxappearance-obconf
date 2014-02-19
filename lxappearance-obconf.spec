@@ -5,7 +5,7 @@ Release:        5
 Group:          Graphical desktop/Other
 License:        GPLv2+
 Url:            http://sourceforge.net/projects/lxde/files/LXAppearance/
-Source0:        %{name}-%{version}.tar.gz
+Source0:        %{name}-%{version}.tar.gz/download
 Patch0:		lxappearance-obconf-automake_113.patch
 BuildRequires:  gettext
 BuildRequires:  intltool
