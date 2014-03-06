@@ -31,6 +31,8 @@ It is only visible when the plugin is installed and Openbox is in use.
 cd po
 ls *.po > LINGUAS
 sed -i 's/.po//g' LINGUAS
+cd ..
+
 ./autogen.sh
 
 %build
