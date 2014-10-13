@@ -1,3 +1,4 @@
----
-sources:
+removed_sources:
   lxappearance-obconf-0.5.1.tar.gz: 19a218693d166c2e36f6936606b0ba05437f471a
+sources:
+  lxappearance-obconf-0.2.2.tar.xz: e6d3c3c146cfa68e933935f2387125d36b558056

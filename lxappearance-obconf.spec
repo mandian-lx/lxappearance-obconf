@@ -1,12 +1,14 @@
+%define _disable_ld_no_undefined 1
+
 Summary:        Plugin to configure OpenBox inside LXAppearance
 Name:           lxappearance-obconf
-Version:        0.5.5
-Release:        10
+Epoch:		1
+Version:        0.2.2
+Release:        1
 Group:          Graphical desktop/Other
 License:        GPLv2+
 Url:            http://lxde.org/
-Source0:        %{name}-%{version}.tar.gz
-Patch0:		lxappearance-obconf-automake_113.patch
+Source0:        %{name}-%{version}.tar.xz
 BuildRequires:  gettext
 BuildRequires:  intltool
 BuildRequires:  libtool
@@ -23,16 +25,8 @@ This plugin adds an addtional tab called "Window Border" to LXAppearance.
 It is only visible when the plugin is installed and Openbox is in use.
 
 %prep
-%setup -qn %{name}
+%setup -q
 %apply_patches
-
-# dirty hack for outdated/changing LINGUAS file
-cd po
-ls *.po > LINGUAS
-sed -i 's/.po//g' LINGUAS
-cd ..
-
-./autogen.sh
 
 %build
 %configure --disable-static
