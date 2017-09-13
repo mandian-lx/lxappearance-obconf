@@ -1,44 +1,60 @@
-%define _disable_ld_no_undefined 1
-
-Summary:        Plugin to configure OpenBox inside LXAppearance
-Name:           lxappearance-obconf
+Summary:	Plugin to configure OpenBox inside LXAppearance
+Name:		lxappearance-obconf
 Epoch:		1
-Version:        0.2.2
-Release:        1
-Group:          Graphical desktop/Other
-License:        GPLv2+
-Url:            http://lxde.org/
-Source0:        %{name}-%{version}.tar.xz
-BuildRequires:  gettext
-BuildRequires:  intltool
-BuildRequires:  libtool
+Version:	0.2.3
+Release:	1
+Group:		Graphical desktop/Other
+License:	GPLv2+
+Url:		https://lxde.org/
+Source0:	https://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.xz
+
+BuildRequires:	gettext
+BuildRequires:	intltool
+BuildRequires:	libtool
 BuildRequires:	openbox
-BuildRequires:  pkgconfig(gtk+-x11-2.0)
-BuildRequires:  pkgconfig(lxappearance)
-BuildRequires:  pkgconfig(obt-3.5)
-BuildRequires:  pkgconfig(sm)
-Requires:       lxappearance >= 0.5.1
-Requires:       openbox
+BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
+BuildRequires:	pkgconfig(gmodule-export-2.0)
+BuildRequires:	pkgconfig(gthread-2.0)
+BuildRequires:	pkgconfig(gtk+-2.0)
+BuildRequires:	pkgconfig(gtk+-x11-2.0)
+BuildRequires:	pkgconfig(lxappearance)
+BuildRequires:	pkgconfig(obrender-3.5)
+BuildRequires:	pkgconfig(obt-3.5)
+BuildRequires:	pkgconfig(sm)
+
+Requires:	lxappearance
+Requires:	openbox
 
 %description
+Lightweight X11 Desktop Environment project (a.k.a LXDE) aimed to provide a
+new desktop environment which is useful enough and keep resource usage lower
+at the same time. Useabiliy, speed, and memory usage are our main concern.
+
+Unlike other tightly integrated desktops LXDE strives to be modular, so each
+component can be used independently with few dependencies. This makes
+porting LXDE to different distributions and platforms easier.
+
 This plugin adds an addtional tab called "Window Border" to LXAppearance. 
 It is only visible when the plugin is installed and Openbox is in use.
+
+%files -f %{name}.lang
+%doc AUTHORS CHANGELOG COPYING README NEWS TODO
+%{_libdir}/lxappearance/plugins/obconf.so
+%{_datadir}/lxappearance/obconf/
+
+#---------------------------------------------------------------------------
 
 %prep
 %setup -q
 %apply_patches
 
 %build
-%configure --disable-static
+%configure
 %make
 
 %install
 %makeinstall_std
-%find_lang %{name}
 
-%files -f %{name}.lang
-# FIXME add NEWS and TODO
-%doc AUTHORS CHANGELOG COPYING README
-%{_libdir}/lxappearance/plugins/obconf.so
-%{_datadir}/lxappearance/obconf/
+# locales
+%find_lang %{name}
 
